@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html  xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>贪吃蛇游戏</title>
+	<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
+
+<style>
+body div canvas{margin:0;padding:0;}
+#screen{
+	width:600px;
+	height:500px;
+	margin:0 auto;  
+	background:#00FF00;  
+	position:relative; 
+	display:none; 
+}
+.snakePart{
+	background:red;	
+	width:25px; 
+	height:25px; 
+	position:absolute; 
+}
+#sub{
+	width:200px;
+	margin:0 auto; 
+	padding-top:10px; 
+}
+#closing{
+	font-size:36px;
+	color:red;
+	font-weight:bolder;
+	position:relative;
+	left:250px;
+	top:250px;
+	z-index:1; 
+	-webkit-animation:flash 3s infinite  cubic-bezier(1,0,0.5,0) ;
+    animation:flash 3s infinite  cubic-bezier(1,0,0.5,0) ; 
+    display:none;      
+}
+
+<style>
+@-webkit-keyframes flash {
+    0%{
+        opacity:1;
+    }
+    50%{
+        opacity: 0.8;
+        color: #ff0000;
+        font-size: 24px;
+    }
+    100%{
+        opacity: 0.5;
+    }
+}
+@keyframes flash {
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0.8;
+        color: #ff0000;
+        font-size: 24px;
+    }
+    100%{
+        opacity: 0.5;
+    }
+}
+#score{
+	width:100px;
+	height:30px;
+	margin:0 auto;   
+}
+#mode{
+	width:600px;
+	height:500px;
+	color:#0000FF; 
+	background-image: url('./snackBackground.jpg'); 
+	line-height:50px; 
+	font-size:28px;
+	font-size:bolder;
+	margin:0 auto;  
+	position:relative;     
+}
+#modeType{
+	position:absolute;
+	left:69%;
+	top:40%; 
+	-webkit-animation:flash 3s infinite  cubic-bezier(1,0,0.5,0) ;
+    animation:flash 3s infinite  cubic-bezier(1,0,0.5,0) ;   
+}
+#gameMode{
+	margin-left:-40px; 
+}
+#disScore{
+	margin-left:-20px; 
+}
+#SimpleMode{
+	cursor:pointer; 
+}
+#complexMode{
+	cursor:pointer;
+}
+#SimpleMode:hover{
+	text-decoration:underline; 
+	color:#FF1493 
+}
+#complexMode:hover{
+	text-decoration:underline; 
+	color:#FF1493 
+}
+</style>
+</style>
+<script>
+	window.onload=function(){
+	}
+</script>
+</head>
+<body>
+	<div id="score">
+	<span>得分</span>
+	<span id="num">0</span>
+	</div>
+	<div id="mode">
+		<div id="modeType">
+			<div id="gameMode">贪吃蛇模式选择</div>
+			<div id="SimpleMode">简单模式</div>
+			<div id="complexMode">复杂模式</div>
+		</div>
+	</div>
+	<div id="screen">
+		<div id="dele">
+			<div class="snakePart" ></div>
+			<div class="snakePart" ></div>
+			<canvas id="food"></canvas>	
+		</div>
+		<div id="closing">游戏结束!
+		<div id="disScore">
+		<span>您的分数是:</span>
+		<span id="number"></span>
+		</div>
+		</div>
+	</div>
+	<div id="sub">
+		<button id="start">开始</button>
+		<button id="stop">暂停</button>
+		<button id="reset">重新开始</button>
+	</div>
+	<script src="./snakejs.js"></script>
+</body>
+</html>
